@@ -2,7 +2,7 @@
 
 > Connect n8n to Claude Code (or other AI terminal tools) via SSH for powerful automation workflows.
 
-**Video**: [n8n + Claude Code is OVERPOWERED](https://youtube.com/@NetworkChuck) (Video 503)
+**Video**: [n8n + Claude Code is OVERPOWERED](https://youtu.be/s96JeuuwLzc)
 
 ---
 
@@ -316,9 +316,9 @@ For long-running Claude operations:
 - **Claude Code Docs**: [Official Documentation](https://docs.anthropic.com/claude-code)
 - **n8n Docs**: [SSH Node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ssh/)
 - **Previous Videos**:
-  - [n8n Part 1](#) - Getting Started
-  - [n8n Part 2](#) - Advanced Workflows
-  - [Why AI in Terminal?](#) - Claude Code Introduction
+  - [n8n Part 1](https://youtu.be/ONgECvZNI3o) - Getting Started with n8n
+  - [n8n Part 2](https://youtu.be/budTmdQfXYU) - n8n Now Runs My ENTIRE Homelab (Terry)
+  - [AI in the Terminal](https://youtu.be/MsQACpcuTkU) - Claude Code, Gemini CLI, Codex Introduction
 
 ---
 
